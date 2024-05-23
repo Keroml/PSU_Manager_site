@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h3>{{title}}</h3>
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<form class="modal" action="{{url_for('upload')}}" method="post" enctype="multipart/form-data">
+    <p><label>Предмет: </label>
+        <input type="text" name="classes" value="" requied />
+    <p><label>Тема:</label>
+        <input type="text" name="themes" value="" requied />
+    <p><label>Текст заданий:</label>
+    <p><textarea name="post" rows=7 cols=40></textarea>
+    <input type="submit" value="Загрузить">
+</form>
+{% endblock %}
+
+

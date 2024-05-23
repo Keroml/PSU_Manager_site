@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h4><a href="{{url_for('logout')}}">Выйти из профиля</a></h4>
+{% endblock %}

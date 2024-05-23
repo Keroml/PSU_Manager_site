@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h2>{{classes}}</h2>
+<h3>{{title}}</h3>
+<ul class="post">
+    <pre>{{ post|safe }}</pre>
+</ul>
+<form action="/post1/{{ id_post }}">
+    <input type="submit" value="Скачать" />
+</form>
+{% endblock %}
